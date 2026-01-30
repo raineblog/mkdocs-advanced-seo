@@ -8,11 +8,10 @@ from mkdocs.config import config_options
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 from mkdocs.structure.files import File
-from mkdocs.utils import warning_filter
+from mkdocs.structure.files import File
 
 # Set up logging
 log = logging.getLogger("mkdocs.plugins.advanced-seo")
-log.addFilter(warning_filter)
 
 class AdvancedSEOPlugin(BasePlugin):
     config_scheme = (
