@@ -1,0 +1,2 @@
+# mkdocs-advanced-seo
+
