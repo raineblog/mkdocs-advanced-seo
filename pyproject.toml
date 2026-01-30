@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mkdocs-advanced-seo"
-version = "1.0.0"
+version = "1.0.1"
 description = "A comprehensive SEO plugin for MkDocs with Advanced Meta tags, Open Graph, Twitter Cards, JSON-LD, and more."
 requires-python = ">=3.8"
 keywords = ["mkdocs", "plugin", "seo", "meta", "open graph", "json-ld"]
