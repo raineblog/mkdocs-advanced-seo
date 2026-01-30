@@ -1,6 +1,6 @@
 site_name: mkdocs-advanced-seo
 site_description: The comprehensive, deep, and robust SEO plugin for MkDocs.
-site_url: https://mkdocs-advanced-seo.generated/
+site_url: https://raineblog.dpdns.org/mkdocs-advanced-seo/
 site_author: RainPPR
 
 repo_name: entry/mkdocs-advanced-seo
@@ -29,7 +29,7 @@ plugins:
   - search
   - social # MkDocs Material Social Cards
   - advanced-seo:
-      url_base: https://mkdocs-advanced-seo.generated
+      url_base: https://raineblog.dpdns.org/mkdocs-advanced-seo/
       use_canonical_url: true
       use_open_graph: true
       use_twitter_cards: true
