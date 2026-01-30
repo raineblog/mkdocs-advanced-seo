@@ -8,28 +8,15 @@ repo_url: https://github.com/entry/mkdocs-advanced-seo
 
 theme:
   name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
   features:
-    - navigation.instant
-    - navigation.tracking
-    - search.suggest
-    - search.highlight
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      media: "(prefers-color-scheme: dark)"
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+    - content.action.view
 
 plugins:
-  - search
   - social # MkDocs Material Social Cards
   - advanced-seo:
-      url_base: https://raineblog.dpdns.org/mkdocs-advanced-seo/
       use_canonical_url: true
       use_open_graph: true
       use_twitter_cards: true

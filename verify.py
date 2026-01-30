@@ -42,10 +42,18 @@ def verify_site():
     # For index, page.title is usually "MkDocs Advanced SEO Plugin" (from H1).
     check(soup_home, 'og:title', 'MkDocs Advanced SEO Plugin', attr='property', msg_prefix='[HOME]')
     
-    # Check Social Card Image (if generated)
+    # Canonical Checks
+    # Should use site_url as base
+    # Home page url is '.' -> ''
+    # Expect: https://raineblog.dpdns.org/mkdocs-advanced-seo/
+    canonical_home = soup_home.find('link', rel='canonical')
+    if not canonical_home:
+         errors.append("[HOME] Missing canonical check")
+    elif canonical_home['href'] != 'https://raineblog.dpdns.org/mkdocs-advanced-seo/':
+         errors.append(f"[HOME] Incorrect canonical: {canonical_home['href']}")
     # Since 'social' plugin is active, expected: assets/images/social/index.png
-    # URL base: https://mkdocs-advanced-seo.generated
-    social_url = 'https://mkdocs-advanced-seo.generated/assets/images/social/index.png'
+    # URL base: https://raineblog.dpdns.org/mkdocs-advanced-seo/
+    social_url = 'https://raineblog.dpdns.org/mkdocs-advanced-seo/assets/images/social/index.png'
     # We can't guarantee 'social' plugin actually runs in this env if dependencies missing, 
     # but we can check if our plugin *tried* to generate the URL (it doesn't check file existence).
     # Wait, our plugin logic: "if 'social' in config['plugins']".
@@ -56,7 +64,7 @@ def verify_site():
     # Custom description
     check(soup_test, 'description', 'Deep testing description', msg_prefix='[TEST]')
     # Custom image (frontmatter overrides social)
-    check(soup_test, 'og:image', 'https://mkdocs-advanced-seo.generated/assets/custom.jpg', attr='property', msg_prefix='[TEST]')
+    check(soup_test, 'og:image', 'https://raineblog.dpdns.org/mkdocs-advanced-seo/assets/custom.jpg', attr='property', msg_prefix='[TEST]')
     
     # JSON-LD Dates
     script_tag = soup_test.find('script', type='application/ld+json')
