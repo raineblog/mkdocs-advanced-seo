@@ -6,7 +6,6 @@ build-backend = "hatchling.build"
 name = "mkdocs-advanced-seo"
 version = "0.1.0"
 description = "A comprehensive SEO plugin for MkDocs with Advanced Meta tags, Open Graph, Twitter Cards, JSON-LD, and more."
-readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["mkdocs", "plugin", "seo", "meta", "open graph", "json-ld"]
 readme = "README.md"
