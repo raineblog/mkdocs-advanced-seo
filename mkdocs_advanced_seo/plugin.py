@@ -111,11 +111,11 @@ class AdvancedSEOPlugin(BasePlugin):
             # Construct expected path
             # The social plugin usually outputs to assets/images/social/...
             # verification: https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/
-            path = page.url
+            path = page.url.rstrip('/')
             if path == '.':
-                path = ''
+                path = 'index'
             
-            social_url = f"assets/images/social/{path}index.png"
+            social_url = f"assets/images/social/{path}.png"
             return self._resolve_url(social_url, config)
             
         # 4. Fallback to global config
