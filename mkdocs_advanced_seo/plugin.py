@@ -259,7 +259,7 @@ class AdvancedSEOPlugin(BasePlugin):
 
         import json
         script = soup.new_tag('script', type='application/ld+json')
-        script.string = json.dumps(schema, ensure_ascii=False, indent=2)
+        script.string = json.dumps(schema, ensure_ascii=False)
         soup.head.append(script)
 
     def _get_date(self, page: Page, config: Dict[str, Any], type_: str) -> Optional[str]:
